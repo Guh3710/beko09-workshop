@@ -13,7 +13,6 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 use Maatwebsite\Excel\Facades\Excel;
 
-
 // ================= LANDING PAGE BEKO 09 WORKSHOP================= //
 Route::get('/beko09workshop', function () {
     return view('beko09workshop');
