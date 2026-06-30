@@ -8,10 +8,8 @@
                 <b>Beko 09 Workshop</b><span>.™</span>
             </h1>
         </div>
-
         <div class="card-body">
             <p class="login-box-msg"><strong>Masuk untuk memulai sesi Anda</strong></p>
-
             <form wire:submit.prevent="login">
                 @csrf
                 <div class="input-group mb-3">
@@ -26,7 +24,6 @@
                 @error('email')
                     <span class="text-danger">{{ $message }}</span>
                 @enderror
-
                 <div class="input-group mb-3">
                     <input type="password" class="form-control @error('password') is-invalid @enderror"
                         placeholder="Masukkan Password Anda" wire:model="password" id="password">
@@ -49,7 +46,6 @@
                     <button type="submit" class="btn btn-primary px-4">Masuk</button>
                 </div>
             </form>
-
             <p class="mb-0">
                 <a href="{{ route('register') }}" class="text-center">Belum punya Akun? Daftar</a>
             </p>

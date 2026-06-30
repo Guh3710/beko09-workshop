@@ -6,6 +6,6 @@
               Reserved</b>
           <i class="fas fa-copyright text-danger"></i>
           <br>
-          <b class="text-success">Design By Guh3710</b>
+          <b class="text-success">Design By Guh_3710</b>
       </div>
   </footer>

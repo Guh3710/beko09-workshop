@@ -1,7 +1,5 @@
 <div>
     <div class="content-wrapper">
-
-        <!-- HEADER -->
         <div class="content-header" style="background: linear-gradient(90deg, #0f2027, #203a43, #2c5364); padding:15px;">
             <div class="container-fluid text-white">
                 <div class="row mb-2 align-items-center">
@@ -21,11 +19,8 @@
                 </div>
             </div>
         </div>
-
         <section class="content mt-3">
             <div class="container-fluid">
-
-                {{-- ================= ADMIN ================= --}}
                 @if (strtolower(auth()->user()->role) === 'admin')
                     <div class="row mb-2">
                         <div class="col-12">
@@ -35,7 +30,6 @@
                             </h4>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#f1c40f; color:white;">
@@ -51,7 +45,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#e74c3c; color:white;">
                                 <div class="inner text-center">
@@ -66,7 +59,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#7f8c8d; color:white;">
                                 <div class="inner text-center">
@@ -81,7 +73,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#2ecc71; color:white;">
                                 <div class="inner text-center">
@@ -97,8 +88,6 @@
                             </div>
                         </div>
                     </div>
-
-                    {{-- ================= PELANGGAN ================= --}}
                 @elseif(strtolower(auth()->user()->role) === 'pelanggan')
                     <div class="row mb-2">
                         <div class="col-12">
@@ -108,7 +97,6 @@
                             </h4>
                         </div>
                     </div>
-
                     <div class="row">
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#3498db; color:white;">
@@ -124,7 +112,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#1abc9c; color:white;">
                                 <div class="inner text-center">
@@ -139,7 +126,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#8e44ad; color:white;">
                                 <div class="inner text-center">
@@ -154,7 +140,6 @@
                                 </a>
                             </div>
                         </div>
-
                         <div class="col-lg-3 col-6">
                             <div class="small-box shadow" style="background:#34495e; color:white;">
                                 <div class="inner text-center">
@@ -171,14 +156,11 @@
                             </div>
                         </div>
                     </div>
-
-                    {{-- ================= FALLBACK ================= --}}
                 @else
                     <div class="text-center text-white mt-5">
                         <h5>Role tidak dikenali</h5>
                     </div>
                 @endif
-
             </div>
         </section>
     </div>

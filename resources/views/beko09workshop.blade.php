@@ -534,7 +534,7 @@
                             class="text-danger">.</span>™</strong> <span>All Rights Reserved</span>
                 </p>
                 <div class="credits">
-                    <a href="#">Designed by Guh3710</a>
+                    <a href="#">Designed by Guh_3710</a>
                 </div>
             </div>
         </div>

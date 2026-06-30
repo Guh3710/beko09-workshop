@@ -18,7 +18,6 @@
                 </div>
             </div>
         </section>
-
         <section class="content" style="padding: 15px; background: linear-gradient(90deg, #0f2027, #203a43, #2c5364);">
             <div class="card"
                 style="background: #ffffff; border-radius: 10px; box-shadow: 0 3px 8px rgba(0,0,0,0.2);">
@@ -66,7 +65,7 @@
                         <thead class="table-dark text-center">
                             <tr>
                                 <th>No</th>
-                                <th>Pelanggan</th>
+                                <th>Nama Pelanggan</th>
                                 <th>Jenis Transaksi</th>
                                 <th>Item</th>
                                 <th>Gambar</th>
@@ -74,7 +73,7 @@
                                 <th>Total Harga</th>
                                 <th>Tanggal Transaksi</th>
                                 <th>Status</th>
-                                <th><i class="fas fa-cog"></i></th>
+                                <th>Opsi</i></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -101,7 +100,7 @@
                                         Rp. {{ number_format((float) ($item->total_harga ?? 0), 0, ',', '.') }}
                                     </td>
                                     <td class="text-center">
-                                        {{ \Carbon\Carbon::parse($item->tanggal_transaksi)->format('d-m-Y') }}
+                                        {{ \Carbon\Carbon::parse($item->tanggal_transaksi)->format('d-m-Y H:i') }}
                                     </td>
                                     <td class="text-center">
                                         @if ($item->status == 'pending')
@@ -114,10 +113,14 @@
                                                 class="btn btn-success btn-sm">
                                                 <i class="fas fa-money-bill-wave mr-1"></i> Lunas
                                             </button>
+                                        @elseif ($item->status == 'proses')
+                                            <span class="badge badge-info">Proses</span>
+                                        @elseif ($item->status == 'selesai')
+                                            <span class="badge badge-success">Selesai</span>
+                                        @elseif ($item->status == 'dibatalkan')
+                                            <span class="badge badge-danger">Dibatalkan</span>
                                         @else
-                                            <span class="badge badge-success">
-                                                <i class="fas fa-check-circle mr-1"></i> Selesai
-                                            </span>
+                                            <span class="badge badge-secondary">{{ ucfirst($item->status) }}</span>
                                         @endif
                                     </td>
                                     <td>

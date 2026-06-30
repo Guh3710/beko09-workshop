@@ -9,7 +9,6 @@
 <link rel="stylesheet" href="{{ asset('adminlte3/plugins/daterangepicker/daterangepicker.css') }}">
 <link rel="stylesheet" href="{{ asset('adminlte3/plugins/summernote/summernote-bs4.min.css') }}">
 <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
-
 <style>
     .main-sidebar {
         background: linear-gradient(140deg, #0f2027, #203a43, #2c5364) !important;

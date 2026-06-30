@@ -1,28 +1,13 @@
-{{-- ======================= SCRIPT JS UTAMA ======================= --}}
-<!-- jQuery -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-
-<!-- Bootstrap Bundle (dengan Popper.js) -->
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
-
-<!-- AdminLTE -->
 <script src="https://cdn.jsdelivr.net/npm/admin-lte@3.2/dist/js/adminlte.min.js"></script>
-
-<!-- SweetAlert2 -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
-
-{{-- ======================= LIVEWIRE & EVENT HOOK ======================= --}}
 <script>
     document.addEventListener("DOMContentLoaded", function() {
-        // Aktifkan dropdown bootstrap
         $('[data-toggle="dropdown"]').dropdown();
-
-        // Ubah title halaman jika ada event
         Livewire.on('setPageTitle', (title) => {
             document.title = title;
         });
-
-        // Notifikasi akun tidak aktif
         Livewire.on('Login_Inactive', () => {
             Swal.fire({
                 title: 'Akun Tidak Aktif',
@@ -31,26 +16,17 @@
                 confirmButtonText: 'OK'
             });
         });
-
-        // Bersihkan email yang tersimpan di localStorage
         Livewire.on('clearSavedEmail', () => {
             localStorage.removeItem('savedEmail');
         });
-
-        // Auto-isi email dari localStorage
         const savedEmail = localStorage.getItem('savedEmail');
         const emailInput = document.querySelector('#email');
-
         if (savedEmail && emailInput) {
             emailInput.value = savedEmail;
         }
-
-        // Simpan email di localStorage jika ada input
         emailInput?.addEventListener('input', () => {
             localStorage.setItem('savedEmail', emailInput.value);
         });
-
-        // Set ulang nilai email ke komponen Livewire
         window.addEventListener('livewire:initialized', () => {
             const component = Livewire.find(
                 document.querySelector('[wire\\:id]')?.getAttribute('wire:id')
@@ -60,8 +36,6 @@
             }
         });
     });
-
-    // Hook untuk inisialisasi ulang setelah Livewire update DOM
     document.addEventListener("livewire:load", function() {
         Livewire.hook('message.processed', () => {
             $('[data-toggle="dropdown"]').dropdown();
@@ -71,13 +45,10 @@
         });
     });
 </script>
-
-{{-- ======================= TOGGLE LIHAT PASSWORD ======================= --}}
 <script>
     function togglePassword(fieldId = 'password', iconId = 'eyeIcon') {
         const input = document.getElementById(fieldId);
         const icon = document.getElementById(iconId);
-
         if (input.type === "password") {
             input.type = "text";
             icon.classList.remove('fa-eye');
@@ -89,8 +60,6 @@
         }
     }
 </script>
-
-{{-- ======================= NOTIFIKASI REGISTER ======================= --}}
 @if (session('Register_Success'))
     <script>
         Swal.fire({
@@ -102,8 +71,6 @@
         });
     </script>
 @endif
-
-{{-- ======================= NOTIFIKASI LOGIN ======================= --}}
 @if (session('Login_Success'))
     <script>
         Swal.fire({
@@ -115,8 +82,6 @@
         });
     </script>
 @endif
-
-{{-- ======================= NOTIFIKASI LOGOUT ======================= --}}
 <script>
     function confirmLogout(e) {
         e.preventDefault();

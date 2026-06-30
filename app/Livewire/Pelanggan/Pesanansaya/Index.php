@@ -18,6 +18,42 @@ class Index extends Component
             ->get();
     }
 
+    public function cancel($id)
+    {
+        $pesanan = DataTransaksi::where('id', $id)
+            ->where('user_id', Auth::id())
+            ->firstOrFail();
+
+        if (strtolower($pesanan->status) == 'pending') {
+
+            if (
+                $pesanan->jenis_transaksi == 'sparepart' &&
+                $pesanan->sparepart
+            ) {
+                $pesanan->sparepart->increment(
+                    'stok',
+                    $pesanan->jumlah
+                );
+            }
+
+            $pesanan->update([
+                'status' => 'dibatalkan'
+            ]);
+
+            session()->flash(
+                'success',
+                'Pesanan berhasil dibatalkan.'
+            );
+        } else {
+            session()->flash(
+                'error',
+                'Pesanan tidak dapat dibatalkan.'
+            );
+        }
+
+        $this->mount();
+    }
+
     public function render()
     {
         return view('livewire.pelanggan.pesanansaya.index', [
