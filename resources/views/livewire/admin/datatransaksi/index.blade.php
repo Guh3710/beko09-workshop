@@ -89,7 +89,7 @@
                                         {{ $item->sparepart->nama_sparepart ?? ($item->jasaBubut->nama_jasa ?? '-') }}
                                     </td>
                                     <td class="text-center">
-                                        @if ($item->sparepart_id && $item->sparepart->gambar)
+                                        @if ($item->sparepart && $item->sparepart->gambar)
                                             <img src="{{ asset('storage/' . $item->sparepart->gambar) }}"
                                                 class="img-thumbnail" width="70" style="object-fit:contain;">
                                         @else

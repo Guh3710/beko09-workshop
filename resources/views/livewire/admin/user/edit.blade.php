@@ -74,7 +74,7 @@
                     @enderror
                 </div>
                 <div class="row mt-2">
-                    <label for="password" class="form-label">Password</label>
+                    <label for="password" class="form-label">Ganti Password</label>
                     <span class="text-danger">*</span>
                     <input wire:model="password" type="password"
                         class="form-control
@@ -88,7 +88,7 @@
                     @enderror
                 </div>
                 <div class="row mt-2">
-                    <label for="password_confirmation" class="form-label">Konfirmasi Password</label>
+                    <label for="password_confirmation" class="form-label">Konfirmasi Ganti Password</label>
                     <span class="text-danger">*</span>
                     <input wire:model="password_confirmation" type="password"
                         class="form-control

@@ -45,7 +45,7 @@ class Dashboard extends Component
         $this->jumlahPesananSaya = DataTransaksi::where('user_id', Auth::id())->count();
 
         return view('livewire.dashboard', [
-            'title' => 'Data Dashboard',
+            'title' => 'Dashboard',
             'role' => $role
         ]);
     }

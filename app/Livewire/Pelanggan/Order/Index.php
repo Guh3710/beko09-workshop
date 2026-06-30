@@ -81,16 +81,43 @@ class Index extends Component
             'jumlah' => 'required|numeric|min:1',
         ]);
 
+        // CEK STOK SPAREPART
+        if ($this->jenis_transaksi === 'sparepart') {
+
+            $sparepart = Sparepart::find($this->sparepart_id);
+
+            // cek stok cukup atau tidak
+            if (!$sparepart || $this->jumlah > $sparepart->stok) {
+
+                session()->flash('error', 'Stok sparepart tidak mencukupi');
+
+                return;
+            }
+        }
+
+        // SIMPAN TRANSAKSI
         DataTransaksi::create([
             'user_id' => Auth::id(),
             'jenis_transaksi' => $this->jenis_transaksi,
-            'sparepart_id' => $this->jenis_transaksi === 'sparepart' ? $this->sparepart_id : null,
-            'jasa_bubut_id' => $this->jenis_transaksi === 'jasa' ? $this->jasa_bubut_id : null,
+            'sparepart_id' => $this->jenis_transaksi === 'sparepart'
+                ? $this->sparepart_id
+                : null,
+
+            'jasa_bubut_id' => $this->jenis_transaksi === 'jasa'
+                ? $this->jasa_bubut_id
+                : null,
+
             'jumlah' => $this->jumlah,
             'total_harga' => $this->total_harga,
             'status' => 'pending',
             'tanggal_transaksi' => now(),
         ]);
+
+        // KURANGI STOK
+        if ($this->jenis_transaksi === 'sparepart') {
+
+            $sparepart->decrement('stok', $this->jumlah);
+        }
 
         $this->dispatch('orderSuccess');
 

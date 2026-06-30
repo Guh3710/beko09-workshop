@@ -43,7 +43,6 @@
 
             <a href="#" class="logo d-flex align-items-center me-auto me-lg-0">
                 <img src="{{ asset('beko/assets/img/logobeko09workshop.png') }}" alt="Logo Beko 09 Workshop">
-                <h1 class="sitename fw-bold">Beko 09 Wokrhsop<span>.</span>™</h1>
             </a>
 
             <nav id="navmenu" class="navmenu">
@@ -148,12 +147,6 @@
                                     motor bagi para pembalap, kami siap memberikan arahan dan
                                     rekomendasi teknis dan paham kebutuhan motor Anda.</b></span></li>
                         </ul>
-                        <!-- Tambahkan logo di bawah sini -->
-                        <div class="text-center mt-4">
-                            <img src="{{ asset('beko/assets/img/logobeko.png') }}" alt="Logo Beko 09 Workshop"
-                                class="img-fluid mt-5"
-                                style="max-height: 300px; object-fit: contain; border-radius: 70px;">
-                        </div>
                         <div class="text-center mt-4">
                             <img src="{{ asset('beko/assets/img/logobeko09workshop.png') }}"
                                 alt="Logo Beko 09 Workshop" class="img-fluid mt-5"
@@ -541,12 +534,11 @@
                             class="text-danger">.</span>™</strong> <span>All Rights Reserved</span>
                 </p>
                 <div class="credits">
-                    <a href="#">Designed by Teguh</a>
+                    <a href="#">Designed by Guh3710</a>
                 </div>
             </div>
         </div>
     </footer>
-
 
     <!-- Scroll Top -->
     <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i

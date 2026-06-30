@@ -15,21 +15,12 @@
 @section('title', '403 Akses Ditolak')
 
 @section('content')
-    <h1>666</h1>
-    <p><strong>HOLAAA DIABLOS !!!</strong><br><br>
-        Wayae Wayae Ngapain Icikbosss ? 😜💩😂<br><br>
-        Sorry Icikbosss Akses Ente Ditolak !<br><br>
-        ANG ANG ANG ANG ANG ANG ANG ANG ANG ANG ANG
+    <h1>403</h1>
+    <p><strong>Upsss Maaf Ada Yang Salah🚫</strong><br><br>
+        Anda tidak memiliki hak untuk mengakses halaman ini!
     </p>
-
-    <p style="font-size:34px; line-height:40px;">
-        💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩
-        💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩
-        💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩💩
-    </p>
-
     <p>
-        <strong>ADIOS DIABLOS !!!</strong>
+        <strong>Akses Dibatasi🚫</strong>
     </p>
 
     <a href="{{ route('logout.beko') }}">Kembali ke Beranda</a>
